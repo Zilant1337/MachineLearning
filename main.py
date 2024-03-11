@@ -1,3 +1,5 @@
+import random
+
 import numpy as np
 import matplotlib.pyplot as plt
 
@@ -28,6 +30,9 @@ def DoTask(M):
 N=1000
 x = np.linspace(0, 1, N)
 z = 20*np.sin(2*np.pi * 3 * x) + 100*np.exp(x)
+shuffledX=np.copy(x)
+random.shuffle(shuffledX)
+shuffledZ=20*np.sin(2*np.pi*3*shuffledX)+100*np.exp(shuffledX)
 error = 10 * np.random.randn(N)
 t = z + error
 M=[1,8,100]
